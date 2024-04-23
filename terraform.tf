@@ -19,7 +19,7 @@ resource "ionoscloud_datacenter" "vdc_bjm" {
 }
 
 resource "ionoscloud_lan" "lan_bjm" {
-  datacenter_id         = ionoscloud_datacenter.lan_bjm.id
+  datacenter_id         = ionoscloud_datacenter.vdc_bjm.id
   public                = false
   name                  = "Lan lan_bjm"
   lifecycle {
