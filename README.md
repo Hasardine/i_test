@@ -8,14 +8,21 @@
 - [x] Produce a repeatable TF template
 - [x] Publish TF/DOCKERFILE/K8S.YAML in public repo
 
-## Basics :
+## Tools & doc :
+Cloud provider : IONOS
+Terraform : Terraform Cloud
+Private repo for images : IONOS COntainer registery
+
+- TF : https://registry.terraform.io/providers/ionos-cloud/ionoscloud/latest/docs/resources/container_registry
+- IONOS doc : https://docs.ionos.com/reference
+
+## On console :
 Get token : Management > Token
 
 ## K8S cluster (with TF first)
-TF file
+TF file 
 
 From VM (use personal rds-test-gds)
-
 ```shell
 sudo apt update
 sudo apt upgrade
@@ -32,7 +39,7 @@ mv -f kubeconfig.json $HOME/.kube/config
 kubectl cluster-info
 ```
 
-Use dockerfile on the VM
+Use dockerfile created on the VM
 
 install docker first - https://docs.docker.com/engine/install/ubuntu/ 
 ```shell
@@ -62,7 +69,7 @@ docker tag bjm/nginx-bjm container-registry-bjm-swr.cr.de-fra.ionos.com/bjm/ngin
 docker push container-registry-bjm-swr.cr.de-fra.ionos.com/bjm/nginx-bjm
 ```
 
-Use YAML file :
+Use YAML file created :
 
 ```shell
 kubectl create secret docker-registry my-registry-secret \
@@ -77,3 +84,9 @@ kubectl get pods
 kubectl get service
 kubectl describe pods
 ```
+
+### Question to ask :
+- No IP for control plane/master node ?
+- SSH to nodes ?
+- Switch off nodes ?
+- Error occurred while fetching k8s.Unauthorized... ?
