@@ -43,7 +43,7 @@ resource "ionoscloud_k8s_cluster" "k8_bjm" {
 }
 
 resource "ionoscloud_k8s_node_pool" "k8_bjm_nodes" {
-  datacenter_id         = ionoscloud_datacenter.k8_bjm.id
+  datacenter_id         = ionoscloud_datacenter.vdc_bjm.id
   k8s_cluster_id        = ionoscloud_k8s_cluster.k8_bjm.id
   name                  = "k8sNodePoolk8_bjm"
   k8s_version           = ionoscloud_k8s_cluster.k8_bjm.k8s_version
