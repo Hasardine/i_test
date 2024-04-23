@@ -75,5 +75,5 @@ resource "ionoscloud_container_registry" "bjm_swr" {
     time    = "05:20:00+00:00"
   }
   location  = "de/fra"
-  name      = "container-registry-bjm_swr"
+  name      = "container-registry-bjm-swr"
 }
