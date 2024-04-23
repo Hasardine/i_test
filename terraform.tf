@@ -51,9 +51,9 @@ resource "ionoscloud_k8s_node_pool" "k8_bjm_nodes" {
     day_of_the_week     = "Sunday"
     time                = "09:00:00Z"
   } 
-  cpu_family            = "INTEL_XEON"
+  cpu_family            = "INTEL_SKYLAKE"
   availability_zone     = "AUTO"
-  storage_type          = "SSD"
+  storage_type          = "HDD"
   node_count            = 2
   cores_count           = 2
   ram_size              = 2048
