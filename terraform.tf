@@ -68,3 +68,12 @@ resource "ionoscloud_k8s_node_pool" "k8_bjm_nodes" {
      }
    }  
 }
+
+resource "ionoscloud_container_registry" "bjm_swr" {
+  garbage_collection_schedule {
+    days    = ["Monday", "Tuesday"]
+    time    = "05:20:00+00:00"
+  }
+  location  = "de/fra"
+  name      = "container-registry-bjm_swr"
+}
